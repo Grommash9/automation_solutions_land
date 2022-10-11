@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'main_page/style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% for members in team_members %}
+        <p>{{ members.member_name }}</p>
+        <p>{{ members.position_title }}</p>
+        <img src="data:image/png;base64,{{ members.avatar_b64 }}" alt={{ members.avatar_name }}  id="img"/><br>
+    {% endfor %}
+
+    {% for works in works_examples %}
+        <p>{{ works.title }}</p>
+        <p>{{ works.description }}</p>
+        <p>{{ works.url }}</p>
+        <img src="data:image/png;base64,{{ works.avatar_b64 }}" alt={{ works.avatar_name }}  id="img"/><br>
+    {% endfor %}
+
+</head>
+<body>
+
+</body>
+</html>
